@@ -16,6 +16,7 @@ const resolvePathA = (route) =>
 function pathExists (route) {
   return fs.existsSync(route)
 }
+// console.log(pathExists('README.md'))
 
 // To detec if path is a file or not BOOLEAN
 function findDirectory (route) {
@@ -42,7 +43,8 @@ const readFileAndDirectory = (route) => {
 
   return newArray
 }
-// console.log(readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'))
+// console.log(readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File'))
+// console.log(readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File4'))
 
 const lookFile = (route) => fs.readFileSync(route).toString()
 
@@ -64,13 +66,14 @@ const extractTheLinks = (route) => {
   return filteredLinks
 }
 
-const linksObject = extractTheLinks(
-  // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
-  'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
-  // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
-  // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\README.md'
-)
-console.log(linksObject)
+// const linksObject = extractTheLinks(
+//   'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+//   // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
+//   // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
+//   // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\README.md'
+//   // console.log(readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File'))
+// )
+// console.log(linksObject)
 
 // To validate the options
 const confirmOptions = (links) => {
@@ -108,12 +111,9 @@ const confirmOptions = (links) => {
 }
 // confirmOptions(linksObject)
 
-// module.exports = {
-//   tobeAbsolute,
-//   resolvePathA,
-//   pathExists,
-//   findDirectory,
-//   readFileAndDirectory,
-//   extractTheLinks,
-//   confirmOptions
-// }
+module.exports = {
+  resolvePathA,
+  pathExists,
+  extractTheLinks,
+  confirmOptions
+}

@@ -1,33 +1,25 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 const {
-  tobeAbsolute,
   resolvePathA,
   pathExists,
-  findDirectory,
-  readFileAndDirectory,
   extractTheLinks,
   confirmOptions
 } = require('./api.js')
 
-const mdLinks = (path) => {
+const mdLinks = (route, options = { validate: false }) => {
   return new Promise((resolve, reject) => {
-    if (pathExists(path)) {
-      if (tobeAbsolute(path)) {
-        const fileMD = readFileAndDirectory(path)
-        fileMD.forEach((md) => {
-          const fileLinks = extractTheLinks(md)
-          console.log(fileLinks)
-        })
-        // resolve(fileLinks)
-        // console.log(extractTheLinks(fileMD))
-        // confirmOptions(fileLinks).then(resolve)
+    if (pathExists(route)) {
+      const absoluteRoute = resolvePathA(route)
+      const arrayLinks = extractTheLinks(absoluteRoute)
+      if (arrayLinks.length > 0) {
+        resolve(console.log(arrayLinks))
+        // confirmOptions(arrayLinks).then(resolve)
       } else {
       //   const absoluteRoute = resolvePathA(path)
       //   const arrayMD = readFileAndDirectory(absoluteRoute)
       //   const arrayObj = extractTheLinks(arrayMD)
       //   // confirmOptions(arrayObj).then(resolve)
-        resolve('no absoluta')
+        reject(console.log('No hay Links'))
       }
     } else {
       reject(console.log('No existe la ruta'))
@@ -36,7 +28,7 @@ const mdLinks = (path) => {
 }
 
 mdLinks(
-  'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
+  'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File', { validate: false }
 ).then((res) => {
   console.log(res)
 })
