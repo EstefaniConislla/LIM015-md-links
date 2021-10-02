@@ -1,10 +1,11 @@
-const api = require('../src/index.js')
+#!/usr/bin/env node
+const api = require('./index.js')
 const args = process.argv.slice(2)
 const chalk = require('chalk')
 const colors = require('colors')
 
 const templateHelp = `
-    ${chalk.blueBright('(◕‿‿◕｡)━━━━ ☆ ☆ ˚ஐ₊✧˳ஐ༚✧˚ஐ₊✧˳ஐ༚✧ ━━━ HELP ━━━ ˚(◕‿‿◕｡)')} 
+    ${chalk.greenBright('HELP')} 
     **********************************************************************************************************************************
       ${colors.cyan.bold('You can use the following options:')}
       ${colors.yellow('--stats')} It is used to obtain the total number of links and those that are not repeated (unique links).
@@ -14,7 +15,10 @@ const templateHelp = `
     **********************************************************************************************************************************
     `
 const templateNull = `
-    ${chalk.redBright('(◕‿‿◕｡)━━━━ ☆ ☆ ˚ஐ₊✧˳ஐ༚✧˚ஐ₊✧˳ஐ༚✧ ━━━ INGRESE UNA RUTA  ━━━ ˚(◕‿‿◕｡)')} 
+    ${chalk.redBright('ENTER A ROUTE')}
+    **********************************************************************************************************************************
+    ${colors.yellow('Error --validate --stats')} TRY AGAIN!!
+    **********************************************************************************************************************************
     `
 const validateLinks = (args) => {
   let message = ''

@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 /* eslint-disable no-unused-vars */
 const path = require('path')
 const fs = require('fs')
@@ -77,12 +78,13 @@ const extractTheLinks = (route) => {
 
 // To validate the options
 const confirmOptions = (links) => {
-  const arrayPromise = links.map((element) => {
+  return Promise.all(links.map((element) => {
+    console.log(element)
     return fetch(element.href)
       .then((response) => {
         const objResponse = {
           href: element.href,
-          text: element.text.substring(0, 50),
+          text: element.title.substring(0, 50),
           path: element.file,
           status: response.status,
           statusText:
@@ -93,25 +95,19 @@ const confirmOptions = (links) => {
       .catch((err) => {
         const objErr = {
           href: element.href,
-          text: element.text.substring(0, 50),
+          text: element.title.substring(0, 50),
           path: element.file,
           status: 'There was a problem with the Fetch request. ' + err,
           statusText: 'Fail'
         }
         return objErr
       })
-  })
-  return Promise.all(arrayPromise)
-    .then((response) => {
-      console.log(response)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  }))
 }
 // confirmOptions(linksObject)
 
 module.exports = {
+  tobeAbsolute,
   resolvePathA,
   pathExists,
   extractTheLinks,
