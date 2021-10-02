@@ -20,7 +20,7 @@ const templateNull = `
     ${colors.yellow('Error --validate --stats')} TRY AGAIN!!
     **********************************************************************************************************************************
     `
-const validateLinks = (args) => {
+const optionsLinks = (args) => {
   let message = ''
   if (args.length === 0) {
     message = templateNull
@@ -56,4 +56,4 @@ const validateLinks = (args) => {
   }
 }
 
-validateLinks(args)
+optionsLinks(args)

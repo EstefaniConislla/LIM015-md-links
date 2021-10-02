@@ -79,7 +79,6 @@ const extractTheLinks = (route) => {
 // To validate the options
 const confirmOptions = (links) => {
   return Promise.all(links.map((element) => {
-    console.log(element)
     return fetch(element.href)
       .then((response) => {
         const objResponse = {
