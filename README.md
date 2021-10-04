@@ -20,18 +20,22 @@ Se puede utilizar el paquete con una serie de opciones.
 
 - Sin opciones: al ejecutar el paquete sin opciones se genera un arreglo que contine informacion de cada link encontrado en el archivo MD:
 
-![Ej 1]()
+![View]()
+
+- Help: al ejecutar el paquete sin opciones se genera un arreglo que contine informacion de cada link encontrado en el archivo MD:
+
+![View](/img/mssgHelp.jpg)
 
 - Validate: al ejecutar el paquete con la opción validate --v o --validate, se genera el arreglo anterior, agregando además, para cada link encontrado el status de cada uno de ellos, mediante una llamada http.
 
-![Ej 2]()
+![View]()
 
 - Stats: al ejecutar el paquete con la opción stats --s o --stats, se genera un objeto con el total de link y con la cantidad de links únicos encontrados dentro del archivo(s).
 
-![Ej 3]()
+![View]()
 
 - Stats y Validate: al ejecutar el paquete con las opciones --s --v o --stats --validate, se genera un objeto con el total de link, con la cantidad de links que se encuentran "OK" y la cantidad de los links que se encuentran "Broken".
 
-![Ej 4]()
+![View]()
 
 ## Dependencias
