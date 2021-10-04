@@ -1,10 +1,6 @@
+/* eslint-disable no-undef */
 const api = require('../src/api.js')
-
-// describe('mdLinks', () => {
-//   it('should...', () => {
-//     console.log('FIX ME!')
-//   })
-// })
+const { mdLinks } = require('../src/index.js')
 
 describe('pathExists', () => {
   it('Deberia ser una función', () => {
@@ -16,6 +12,12 @@ describe('tobeAbsolute', () => {
   it('Comprueba que la ruta no es absoluta', () => {
     const path = 'README.md'
     expect(api.tobeAbsolute(path)).toBeFalsy()
+  })
+})
+
+describe('findDirectory', () => {
+  it('Deberia ser una función', () => {
+    expect(typeof api.findDirectory).toBe('function')
   })
 })
 
@@ -31,38 +33,84 @@ describe('resolvePathA', () => {
   })
 })
 
-describe('findDirectory', () => {
-  it('Comprueba que la ruta sea de un directorio', () => {
-    const path = 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
-    expect(api.findDirectory(path)).toBeTruthy()
-  })
-})
-
 describe('readFileAndDirectory', () => {
-  it('Comprueba que el archivo sea md', () => {
-    const path = '\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File1\\example.txt'
-    expect(api.readFileAndDirectory(path)).toBeFalsy()
+  it('Debería ser una función', () => {
+    expect(typeof api.readFileAndDirectory).toBe('function')
+  })
+  it('Debería mostrar todos los archivos md', () => {
+    expect(readFileAndDirectory('File')).toEqual(['example2.md', 'example.md', 'example3.md'])
   })
 })
 
 describe('extractTheLinks', () => {
-  it('Devuelve un array vacío si NO hay links', () => {
-    const path = ['C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File4\\example3.md']
-    expect(api.extractTheLinks(path)).toEqual([])
+  it('Debería ser una función', () => {
+    expect(typeof api.extractTheLinks).toBe('function')
   })
-  it('Devuelve en un array de objetos el href, text y file de los links', () => {
-    const path = ['C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md']
+  it('Devuelve en un array de objetos con el href, text y file de los links', () => {
+    const path = ['C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File']
     expect(api.extractTheLinks(path)).toEqual([
       {
-        href: 'https://es.wikipedia.org/wiki/Markdown',
-        text: 'Markdown',
-        file: '\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+        href: 'https://curriculum.laboratoria.la/es/topics/javascript/04-arrays',
+        title: 'Arreglos',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
       },
       {
-        href: 'https://www.google.com/colores',
-        text: 'Colores - link roto',
-        file: '\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/ow',
+        title: 'Array - MDN',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+      },
+      {
+        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort',
+        title: 'Array.prototype.sort() - MDN',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+      },
+      {
+        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach',
+        title: 'Array.prototype.forEach() - MDN',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+      },
+      {
+        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map',
+        title: 'Array.prototype.map() - MDN',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+      },
+      {
+        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
+        title: 'Array.prototype.filter() - MDN',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+      },
+      {
+        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reducep',
+        title: 'Array.prototype.reduce() - MDN',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
+      },
+      {
+        href: 'https://nodejs.org/api/fs.html',
+        title: 'File system - Documentación oficial (en inglés)',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
+      },
+      {
+        href: 'https://nodejs.org/api/path.html',
+        title: 'Path - Documentación oficial (en inglés)',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
+      },
+      {
+        href: 'https://pages.github.com/',
+        title: 'Sitio oficial de GitHub Pages',
+        file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
       }
     ])
+  })
+})
+
+describe('confirmOptions', () => {
+  it('Deberia ser una función', () => {
+    expect(typeof api.confirmOptions).toBe('function')
+  })
+})
+
+describe('mdLinks', () => {
+  it('Deberia ser una función', () => {
+    expect(typeof mdLinks).toBe('function')
   })
 })

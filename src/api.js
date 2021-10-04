@@ -108,7 +108,9 @@ const confirmOptions = (links) => {
 module.exports = {
   tobeAbsolute,
   resolvePathA,
+  findDirectory,
   pathExists,
+  readFileAndDirectory,
   extractTheLinks,
   confirmOptions
 }
