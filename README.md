@@ -20,9 +20,9 @@ Se puede utilizar el paquete con una serie de opciones.
 
 - Sin opciones: al ejecutar el paquete sin opciones se genera un arreglo que contine informacion de cada link encontrado en el archivo MD:
 
-![View]()
+![View](/img/sinRoute.jpg)
 
-- Help: al ejecutar el paquete sin opciones se genera un arreglo que contine informacion de cada link encontrado en el archivo MD:
+- Help: al ejecutar el paquete con la opción --help se genera un arreglo que contiene informacion de cada options:
 
 ![View](/img/mssgHelp.jpg)
 
