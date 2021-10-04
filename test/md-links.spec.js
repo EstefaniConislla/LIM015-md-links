@@ -38,7 +38,11 @@ describe('readFileAndDirectory', () => {
     expect(typeof api.readFileAndDirectory).toBe('function')
   })
   it('Debería mostrar todos los archivos md', () => {
-    expect(readFileAndDirectory('File')).toEqual(['example2.md', 'example.md', 'example3.md'])
+    expect(api.readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File'))
+      .toEqual(['C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md',
+        'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md',
+        'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File4\\example3.md'
+      ])
   })
 })
 
@@ -113,4 +117,5 @@ describe('mdLinks', () => {
   it('Deberia ser una función', () => {
     expect(typeof mdLinks).toBe('function')
   })
-})
+}
+)
