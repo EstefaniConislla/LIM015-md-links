@@ -51,8 +51,8 @@ describe('extractTheLinks', () => {
     expect(typeof api.extractTheLinks).toBe('function')
   })
   it('Devuelve en un array de objetos con el href, text y file de los links', () => {
-    const path = ['C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File']
-    expect(api.extractTheLinks(path)).toEqual([
+    const path = 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
+    const arrayMd = [
       {
         href: 'https://curriculum.laboratoria.la/es/topics/javascript/04-arrays',
         title: 'Arreglos',
@@ -103,7 +103,8 @@ describe('extractTheLinks', () => {
         title: 'Sitio oficial de GitHub Pages',
         file: 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
       }
-    ])
+    ]
+    expect(api.extractTheLinks(path)).toStrictEqual(arrayMd)
   })
 })
 
@@ -119,3 +120,9 @@ describe('mdLinks', () => {
   })
 }
 )
+
+describe('confirmOptions', () => {
+  it('Deberia ser una función', () => {
+    expect(typeof api.confirmOptions).toBe('function')
+  })
+})
