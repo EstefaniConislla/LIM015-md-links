@@ -69,10 +69,10 @@ const extractTheLinks = (route) => {
 
 // const linksObject = extractTheLinks(
 //   'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File2\\example2.md'
-//   // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
-//   // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
-//   // 'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\README.md'
-//   // console.log(readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File'))
+//   'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File\\File3\\example.md'
+//   'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src'
+//   'C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\README.md'
+//    console.log(readFileAndDirectory('C:\\Users\\Usuario\\Documents\\LABORATORIA\\LIM015-md-links\\src\\File'))
 // )
 // console.log(linksObject)
 

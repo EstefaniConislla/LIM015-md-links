@@ -6,6 +6,8 @@ Encuentra todos los links dentro de un archivo Markdown. Funciona cuando se ingr
 
 ## Instalación
 
+$ npm i estefanica
+
 ## Usage
 
 Implementa los modulos de node.js:
@@ -28,14 +30,12 @@ Se puede utilizar el paquete con una serie de opciones.
 
 - Validate: al ejecutar el paquete con la opción validate --v o --validate, se genera el arreglo anterior, agregando además, para cada link encontrado el status de cada uno de ellos, mediante una llamada http.
 
-![View]()
+![View](/img/validate.jpg)
 
 - Stats: al ejecutar el paquete con la opción stats --s o --stats, se genera un objeto con el total de link y con la cantidad de links únicos encontrados dentro del archivo(s).
 
-![View]()
+![View](/img/stats.jpg)
 
 - Stats y Validate: al ejecutar el paquete con las opciones --s --v o --stats --validate, se genera un objeto con el total de link, con la cantidad de links que se encuentran "OK" y la cantidad de los links que se encuentran "Broken".
 
-![View]()
-
-## Dependencias
+![View](/img/validatestats.jpg)
